@@ -19,6 +19,7 @@ bluez-utils
 nano
 git
 vim
+vi
 neofetch
 bat
 fzf
@@ -115,6 +116,7 @@ bleachbit
 nvtop
 cpufetch
 go
+yazi
 qbittorrent
 archlinux-keyring
 guvcview
