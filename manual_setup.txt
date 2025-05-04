@@ -1,0 +1,212 @@
+sudo pacman -S rp-pppoe
+
+nmcli con edit type pppoe con-name "err"
+set pppoe.username user@daffodilnet.com
+save
+yes
+quit
+
+
+
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
+
+
+
+paru -Rns epiphany 
+
+sudo pacman -S nvidia-inst
+nvidia-inst
+
+sudo pacman -S --needed bluez bluez-utils
+# sudo pacman -S blueman
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
+sudo systemctl enable --now bluetooth
+
+sudo pacman -S nano git vim neofetch bat
+
+sudo pacman -S p7zip unrar tar rsync git neofetch htop ntfs-3g flac jasper aria2 
+sudo pacman -S jdk-openjdk
+sudo pacman -S intel-ucode
+sudo pacman -S --needed base-devel git
+sudo pacman -S flatpak
+sudo pacman -S firefox libreoffice-fresh vlc gimp thunderbird kdenlive krita inkscape obs-studio 
+
+sudo pacman -S ufw
+sudo systemctl enable ufw
+sudo systemctl start ufw
+
+paru -S preload
+sudo systemctl enable preload && sudo systemctl start preload
+
+sudo pacman -S bash-completion
+sudo pacman -S unzip
+sudo pacman -S enchant mythes-en ttf-liberation hunspell-en_US ttf-bitstream-vera pkgstats adobe-source-sans-pro-fonts gst-plugins-good ttf-droid ttf-dejavu aspell-en icedtea-web gst-libav ttf-ubuntu-font-family ttf-anonymous-pro jre8-openjdk languagetool libmythes 
+sudo pacman -S libreoffice-fresh
+sudo pacman -S vlc
+sudo pacman -S intel-ucode
+paru -S stremio
+sudo pacman -S starship
+paru -S visual-studio-code-bin vscodium
+sudo pacman -S gnome-font-viewer
+sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore 
+paru -S spotify-launcher
+paru -S lmstudio-appimage
+sudo pacman -S discord telegram-desktop
+paru -S google-chrome
+sudo pacman -S chromium
+sudo pacman -S intellij-idea-community-edition 
+sudo pacman -S pycharm-community-edition 
+paru -S postman-bin
+paru -S android-studio
+sudo pacman -S mpv vlc unrar unzip python-pip cargo p7zip ntfs-3g htop
+sudo pacman -S htop bpytop clang cargo samba exfat-utils jdk-openjdk curl wget unrar git unzip ntfs-3g p7zip gcc make bzip2 tar cmake gstreamer-vaapi
+sudo pacman -S linux-headers vulkan-tools vulkan-validation-layers unrar gstreamer-vaapi htop neofetch bpytop clang cargo samba
+sudo pacman -S htop fastfetch bpytop clang cargo samba jdk-openjdk curl wget unrar linux-headers git unzip ntfs-3g p7zip nodejs gcc bleachbit nvtop cpufetch go
+sudo pacman -S qbittorrent
+sudo pacman -Syu linux-headers vulkan-tools vulkan-validation-layers unrar gst-plugins-good htop neofetch bpytop clang cargo samba
+sudo pacman -Syu git gcc nodejs jdk-openjdk curl wget unzip ntfs-3g p7zip libreoffice vlc
+sudo pacman -S bleachbit archlinux-keyring
+sudo pacman -S grub-customizer obs-studio qbittorrent guvcview
+
+paru -S touchegg
+sudo systemctl enable touchegg.service
+sudo systemctl start touchegg
+sudo systemctl status touchegg
+
+
+sudo pacman -S neovim
+sudo pacman -Sy gnome-browser-connector
+paru -S onlyoffice-bin stacer-bin
+paru -S lorien-bin 
+paru -S stremio
+sudo pacman -Syyu    
+sudo pacman -S qemu-full virt-manager virt-viewer dnsmasq bridge-utils vde2 openbsd-netcat
+paru -S dynamic-wallpaper
+paru -S gnome-shell-extension-openweather
+paru -S gnome-shell-extensions
+paru -S gnome-menus
+
+flatpak install flathub com.mattjakeman.ExtensionManager
+
+sudo systemctl start libvirtd.service
+sudo systemctl enable libvirtd.service
+sudo systemctl status libvirtd.service
+sudo virsh net-start default
+sudo virsh net-autostart default
+
+sudo pacman -S rocm-hip-sdk
+sudo pacman -S ollama-cuda
+paru -S cuda
+
+
+systemctl status ollama.service
+systemctl start ollama.service
+systemctl enable ollama.service
+systemctl status ollama.service
+
+paru -S ttf-ms-fonts
+paru -S ibus-avro-git
+
+curl -sSLf https://github.com/aclap-dev/vdhcoapp/releases/latest/download/install.sh | bash
+
+
+xampp
+
+paru -S xampp
+sudo systemctl start xampp.service
+sudo nano /etc/systemd/system/xampp.service 
+
+[Unit]
+Description=XAMPP
+
+[Service]
+ExecStart=/opt/lampp/xampp start
+ExecStop=/opt/lampp/xampp stop
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+sudo systemctl enable xampp.service
+sudo systemctl status xampp.service
+
+go to xampp shell
+/opt/lampp/bin/mysql -u root -p
+
+folder of files
+/opt/lampp/var/mysql
+sudo chmod 764 *
+
+
+paru -S mongodb-bin 
+sudo systemctl start mongodb
+sudo systemctl enable mongodb
+sudo systemctl status mongodb
+paru -S mongodb-compass
+
+flutter
+.bashrc
+fastfetch
+eval "$(starship init bash)"
+export PATH="$PATH:/home/bk/.softwares/flutter/bin"
+export CHROME_EXECUTABLE=/usr/bin/chromium
+
+sudo pacman -S curl git unzip zip xz glu ninja
+flutter doctor --android-licenses
+
+cd ~/.local/share
+git clone https://github.com/LierB/fastfetch
+
+
+
+
+
+
+
+graphic pad driver 
+https://www.huion.com/index.php?m=content&c=index&a=lists&catid=16&down_title2=Inspiroy%20Dial%202
+
+
+last step after stopping xampp
+
+sudo pacman -S mysql
+sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+sudo systemctl enable mysqld
+sudo systemctl start mysqld
+sudo systemctl status mysqld
+sudo pacman -S mysql-workbench
+
+
+
+
+Duelboot steup
+
+sudo pacman -S os-prober
+sudo os-prober
+sudo update-grub
+
+
+
+Update grub solve
+
+sudo nano /usr/sbin/update-grub
+
+#!/bin/sh 
+set -e 
+exec grub-mkconfig -o /boot/grub/grub.cfg "$@"
+
+
+
+
+sudo chown root:root /usr/sbin/update-grub
+sudo chmod 755 /usr/sbin/update-grub
+sudo update-grub
+
+
