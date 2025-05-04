@@ -10,6 +10,7 @@ NC="\033[0m"
 
 # Package lists
 PACMAN_PACKAGES=(
+tree
 firefox-developer-edition
 rp-pppoe
 base-devel
