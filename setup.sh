@@ -180,7 +180,7 @@ onlyoffice-bin
 lorien-bin
 xampp
 mongodb-bin
-mongodb-compass
+mongodb-compass-bin
 ttf-ms-fonts
 ibus-avro-git
 )

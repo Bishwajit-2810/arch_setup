@@ -149,7 +149,7 @@ paru -S mongodb-bin
 sudo systemctl start mongodb
 sudo systemctl enable mongodb
 sudo systemctl status mongodb
-paru -S mongodb-compass
+paru -S mongodb-compass-bin
 
 flutter
 .bashrc
