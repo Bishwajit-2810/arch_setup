@@ -163,6 +163,8 @@ zip
 xz glu 
 ninja
 lm_sensors
+mesa
+vulkan-intel
 )
 
 PARU_PACKAGES=(
