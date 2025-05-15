@@ -168,6 +168,7 @@ vulkan-intel
 )
 
 PARU_PACKAGES=(
+proton-vpn-gtk-app
 arduino-ide-bin
 portainer-bin
 preload
