@@ -166,6 +166,7 @@ lm_sensors
 mesa
 vulkan-intel
 swtpm
+noto-fonts-extra
 )
 
 PARU_PACKAGES=(
