@@ -165,6 +165,7 @@ ninja
 lm_sensors
 mesa
 vulkan-intel
+swtpm
 )
 
 PARU_PACKAGES=(
