@@ -174,7 +174,7 @@ proton-vpn-gtk-app
 arduino-ide-bin
 portainer-bin
 preload
-parabolic-gtk
+parabolic
 visual-studio-code-bin
 vscodium-bin
 lmstudio
