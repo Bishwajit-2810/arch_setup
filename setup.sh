@@ -156,7 +156,8 @@ touchegg
 gnome-shell-extensions
 gnome-menus
 python-pipx
-curl 
+curl
+mesa-utils
 git
 unzip
 zip 
