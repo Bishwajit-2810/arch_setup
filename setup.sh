@@ -20,7 +20,6 @@ nano
 git
 vim
 vi
-neofetch
 bat
 fzf
 btop

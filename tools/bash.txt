@@ -22,10 +22,17 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 
-alias vim='nvim'
-alias vi='nvim'
+#alias vim='nvim'
+#alias vi='nvim'
 
 
+
+
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+
+export QT_QPA_PLATFORM=wayland
+export QT_PLUGIN_PATH=/usr/lib/qt6/plugins
+export LD_LIBRARY_PATH=/usr/lib/qt6:$LD_LIBRARY_PATH
 
 
 
