@@ -170,6 +170,7 @@ noto-fonts-extra
 )
 
 PARU_PACKAGES=(
+ttf-google-sans
 proton-vpn-gtk-app
 arduino-ide-bin
 portainer-bin
