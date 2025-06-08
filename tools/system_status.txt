@@ -18,5 +18,10 @@ sudo virsh net-autostart default
 sudo systemctl start mongodb
 sudo systemctl enable mongodb
 sudo systemctl status mongodb
-
+sudo systemctl start ollama.service
+sudo systemctl enable ollama.service
+sudo systemctl status ollama.service
+sudo systemctl start portainer.service 
+sudo systemctl enable portainer.service
+sudo systemctl status portainer.service
 
