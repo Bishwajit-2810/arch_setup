@@ -205,7 +205,10 @@ ttf-google
 )
 
 UNINSTALL_PACKAGES=(
-  epiphany
+gimp
+krita
+inkscape
+epiphany
 )
 
 # Logging helpers
@@ -244,7 +247,7 @@ install_paru_packages() {
 
 uninstall_packages() {
   log "Uninstalling selected packages with paru..."
-  paru -Rns --noconfirm "${UNINSTALL_PACKAGES[@]}"
+  paru -R --noconfirm "${UNINSTALL_PACKAGES[@]}"
 }
 
 show_dry_run() {
