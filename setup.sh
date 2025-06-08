@@ -10,6 +10,7 @@ NC="\033[0m"
 
 # Package lists
 PACMAN_PACKAGES=(
+#ptyxis
 tree
 firefox-developer-edition
 rp-pppoe
@@ -167,10 +168,21 @@ mesa
 vulkan-intel
 swtpm
 noto-fonts-extra
+python-pyqt6
+telegram-desktop
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
+ttf-dejavu
+ttf-liberation
+ttf-roboto
+noto-fonts-extra
 )
 
 PARU_PACKAGES=(
 ttf-google-sans
+ttf-google
 proton-vpn-gtk-app
 arduino-ide-bin
 portainer-bin
@@ -178,7 +190,6 @@ preload
 parabolic
 visual-studio-code-bin
 vscodium-bin
-lmstudio
 google-chrome
 postman-bin
 android-studio
@@ -186,9 +197,11 @@ onlyoffice-bin
 lorien-bin
 xampp
 mongodb-bin
-mongodb-compass-bin
 ttf-ms-fonts
 ibus-avro-git
+extension-manager
+ttf-google-sans
+ttf-google
 )
 
 UNINSTALL_PACKAGES=(
