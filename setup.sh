@@ -209,6 +209,7 @@ gimp
 krita
 inkscape
 epiphany
+mpv
 )
 
 # Logging helpers
