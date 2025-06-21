@@ -42,6 +42,7 @@ tar
 rsync
 htop
 ntfs-3g
+nvm
 flac
 jasper
 aria2
