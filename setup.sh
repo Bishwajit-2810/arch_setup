@@ -201,6 +201,9 @@ xampp
 mongodb-bin
 hydra-launcher-bin
 protontricks
+lutris
+heroic-games-launcher-bin
+protonup-qt-bin
 ttf-ms-fonts
 ibus-avro-git
 extension-manager
@@ -214,6 +217,8 @@ krita
 inkscape
 epiphany
 mpv
+lutris
+heroic-games-launcher-bin
 )
 
 # Logging helpers
