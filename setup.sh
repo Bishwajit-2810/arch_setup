@@ -160,6 +160,7 @@ python-pipx
 curl
 mesa-utils
 git
+steam
 unzip
 zip 
 xz glu 
@@ -198,6 +199,8 @@ onlyoffice-bin
 lorien-bin
 xampp
 mongodb-bin
+hydra-launcher-bin
+protontricks
 ttf-ms-fonts
 ibus-avro-git
 extension-manager
