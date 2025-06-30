@@ -113,6 +113,7 @@ vulkan-tools
 vulkan-validation-layers
 fastfetch
 nodejs
+npm
 bleachbit
 nvtop
 cpufetch
