@@ -191,6 +191,8 @@ arduino-ide-bin
 portainer-bin
 preload
 parabolic
+planify 
+devtoolbox
 visual-studio-code-bin
 vscodium-bin
 google-chrome
