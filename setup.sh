@@ -172,6 +172,7 @@ vulkan-intel
 swtpm
 noto-fonts-extra
 python-pyqt6
+iotas
 telegram-desktop
 noto-fonts
 noto-fonts-cjk
