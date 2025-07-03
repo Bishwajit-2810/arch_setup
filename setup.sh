@@ -173,6 +173,7 @@ swtpm
 noto-fonts-extra
 python-pyqt6
 iotas
+ptyxis
 telegram-desktop
 noto-fonts
 noto-fonts-cjk
