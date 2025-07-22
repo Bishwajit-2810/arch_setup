@@ -186,6 +186,7 @@ noto-fonts-extra
 )
 
 PARU_PACKAGES=(
+mongodb-compass-bin
 ttf-google-sans
 ttf-google
 proton-vpn-gtk-app
