@@ -189,6 +189,7 @@ PARU_PACKAGES=(
 mongodb-compass-bin
 ttf-google-sans
 ttf-google
+devtoolbox
 proton-vpn-gtk-app
 portainer-bin
 preload
