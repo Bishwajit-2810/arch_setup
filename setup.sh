@@ -190,7 +190,6 @@ mongodb-compass-bin
 ttf-google-sans
 ttf-google
 proton-vpn-gtk-app
-arduino-ide-bin
 portainer-bin
 preload
 parabolic
