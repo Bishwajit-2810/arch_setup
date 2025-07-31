@@ -208,6 +208,7 @@ mongodb-bin
 hydra-launcher-bin
 protontricks
 lutris
+protonplus
 heroic-games-launcher-bin
 protonup-qt-bin
 ttf-ms-fonts
