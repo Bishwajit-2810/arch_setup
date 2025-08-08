@@ -1,361 +1,473 @@
-aiobotocore
-aiohappyeyeballs
-aiohttp
-aioitertools
-aiosignal
-alabaster
-altair
-annotated-types
-anyio
-appdirs
-archspec
-argon2-cffi
-argon2-cffi-bindings
-arrow
-astroid
-astropy
-astropy-iers-data
-asttokens
-async-lru
-atomicwrites
-attrs
-automat
-autopep8
-babel
-bcrypt
-beautifulsoup4
-binaryornot
-black
-blinker
-bokeh
-boltons
-botocore
-bottleneck
-brotli-python
-cachetools
-certifi
-cffi
-chardet
-charset-normalizer
-click
-cloudpickle
-colorama
-colorcet
-comm
-constantly
-contourpy
-cookiecutter
-cryptography
-cssselect
-cycler
-cytoolz
-dask
-dask-core
-dask-expr
-datashader
-debugpy
-decorator
-defusedxml
-diff-match-patch
-dill
-distributed
-distro
-docstring-to-markdown
-docutils
-et_xmlfile
-executing
-filelock
-flake8
-flask
-fonttools
-frozendict
-frozenlist
-fsspec
-gensim
-gitdb
-gitpython
-greenlet
-h11
-h5py
-heapdict
-holoviews
-httpcore
-httpx
-hvplot
-hyperlink
-idna
-imagecodecs
-imageio
-imagesize
-imbalanced-learn
-importlib-metadata
-incremental
-inflection
-iniconfig
-intake
-intervaltree
-ipykernel
-ipython
-ipython_genutils
-ipywidgets
-isort
-itemadapter
-itemloaders
-itsdangerous
-jaraco.classes
-jedi
-jeepney
-jellyfish
-jinja2
-jmespath
-joblib
-json5
-jsonpatch
-jsonpointer
-jsonschema
-jsonschema-specifications
-jupyter
-jupyter-lsp
-jupyter_client
-jupyter_console
-jupyter_core
-jupyter_events
-jupyter_server
-jupyter_server_terminals
-jupyterlab
-jupyterlab-variableinspector
-jupyterlab_pygments
-jupyterlab_server
-jupyterlab_widgets
-keyring
-kiwisolver
-lazy-object-proxy
-lazy_loader
-linkify-it-py
-llvmlite
-locket
-lxml
-lz4
-markdown
-markdown-it-py
-markupsafe
-matplotlib
-matplotlib-base
-matplotlib-inline
-mccabe
-mdit-py-plugins
-mdurl
-menuinst
-mistune
-mkl-service
-mkl_fft
-mkl_random
-more-itertools
-mpmath
-msgpack-python
-multidict
-multipledispatch
-mypy
-mypy_extensions
-navigator-updater
-nbclient
-nbconvert
-nbformat
-nest-asyncio
-networkx
-nltk
-notebook
-notebook-shim
-numba
-numexpr
-numpy
-numpy-base
-numpydoc
-openpyxl
-overrides
-packaging
-pandas
-pandocfilters
-panel
-param
-parsel
-parso
-partd
-pathspec
-patsy
-pexpect
-pickleshare
-pillow
-pip
-pkce
-pkginfo
-platformdirs
-plotly
-pluggy
-ply
-prometheus_client
-prompt-toolkit
-prompt_toolkit
-protego
-protobuf
-psutil
-ptyprocess
-pure_eval
-py-cpuinfo
-py-lief
-pyarrow
-pyasn1
-pyasn1-modules
-pybind11-abi
-pycodestyle
-pycosat
-pycparser
-pyct
-pycurl
-pydantic
-pydantic-core
-pydeck
-pydispatcher
-pydocstyle
-pyerfa
-pyflakes
-pygments
-pyjwt
-pylint
-pylint-venv
-pyls-spyder
-pyodbc
-pyopenssl
-pyparsing
-pyqt
-pyqt5-sip
-PyQt6
-pyqtwebengine
-pysocks
-pytables
-pytest
-python
-python-dateutil
-python-dotenv
-python-fastjsonschema
-python-json-logger
-python-libarchive-c
-python-lmdb
-python-lsp-black
-python-lsp-jsonrpc
-python-lsp-server
-python-slugify
-python-tzdata
-pytoolconfig
-pytz
-pyviz_comms
-pywavelets
-pyxdg
-pyyaml
-pyzmq
-qdarkstyle
-qstylizer
-qtawesome
-qtconsole
-qtpy
-queuelib
-readline
-referencing
-regex
-requests
-requests-file
-requests-toolbelt
-rfc3339-validator
-rfc3986-validator
-rich
-rope
-rpds-py
-rtree
-ruamel.yaml
-ruamel.yaml.clib
-ruamel_yaml
-s3fs
-scikit-image
-scikit-learn
-scipy
-scrapy
-seaborn
-secretstorage
-semver
-send2trash
-service_identity
-setuptools
-sip
-six
-smart_open
-smmap
-sniffio
-snowballstemmer
-sortedcontainers
-soupsieve
-sphinx
-sphinxcontrib-applehelp
-sphinxcontrib-devhelp
-sphinxcontrib-htmlhelp
-sphinxcontrib-jsmath
-sphinxcontrib-qthelp
-sphinxcontrib-serializinghtml
-spyder
-spyder-kernels
-sqlalchemy
-stack_data
-statsmodels
-streamlit
-sympy
-tabulate
-tblib
-tenacity
-terminado
-text-unidecode
-textdistance
-threadpoolctl
-three-merge
-tifffile
-tinycss2
-tk
-tldextract
-toml
-tomli
-tomlkit
-toolz
-tornado
-tqdm
-traitlets
-truststore
-twisted
-typing-extensions
-typing_extensions
-tzdata
-uc-micro-py
-ujson
-unicodedata2
-unidecode
-unixodbc
-urllib3
-utf8proc
-w3lib
-watchdog
-wcwidth
-webencodings
-websocket-client
-werkzeug
-whatthepatch
-wheel
-widgetsnbextension
-wrapt
-wurlitzer
-xarray
-xyzservices
-yapf
-yarl
-zict
-zipp
-zope
-zope.interface
-zstandard
+# =====================================
+# 1. Core Scientific Python Stack (Data manipulation, math, statistics)
+# =====================================
+numpy                   # Numerical computing library
+numpy-base              # Core numpy dependency
+scipy                   # Scientific computing and math functions
+pandas                  # Dataframes and data manipulation
+statsmodels             # Statistical modeling and tests
+sympy                   # Symbolic mathematics
+numba                   # JIT compiler for numerical functions
+numexpr                 # Fast array computations
+cython                  # Compile Python code to C for performance
+patsy                   # Statistical model formulas
+mpmath                  # Arbitrary-precision arithmetic
+
+# =====================================
+# 2. Data Handling & Storage
+# =====================================
+h5py                    # HDF5 file reading/writing
+tables                  # Hierarchical datasets
+sqlalchemy              # ORM for SQL databases
+openpyxl                # Excel .xlsx files reading/writing
+xlrd                    # Excel .xls file reading
+pyarrow                 # Apache Arrow columnar data format
+fastparquet             # Parquet file format support
+et_xmlfile              # XML writing
+pytables                # Manage large hierarchical datasets
+pyyaml                  # YAML file parsing
+json5                   # Extended JSON format
+ujson                   # Ultra-fast JSON parsing
+yaml                    # Alternative YAML parser
+pytz                    # Timezone handling
+python-dateutil         # Date and time utilities
+python-tzdata           # Timezone database
+lz4                     # LZ4 compression
+zstandard               # Zstandard compression
+
+# =====================================
+# 3. Visualization & Plotting
+# =====================================
+matplotlib              # General plotting library
+matplotlib-base         # Core matplotlib dependency
+seaborn                 # Statistical data visualization
+plotly                  # Interactive visualizations
+altair                  # Declarative visualization
+bokeh                   # Interactive plots for web browsers
+hvplot                  # High-level plotting API
+holoviews               # Flexible, composable visualization
+panel                   # Dashboarding and GUIs
+datashader              # Big data visualizations
+graphviz                # Graph drawing tools
+pygraphviz              # Graph visualization bindings
+geopandas               # Geographic data processing
+folium                  # Leaflet maps for Python
+dash                    # Web dashboards framework
+contourpy               # Contour plotting backend
+colorcet                # Colormaps for visualization
+imageio                 # Image reading/writing
+imagecodecs             # Image encoding/decoding
+pydeck                  # WebGL-based geospatial visualization
+pyviz_comms             # Visualization communication tools
+xyzservices             # Tile sources for maps
+missingno               # Visualizing missing data
+
+# =====================================
+# 4. Machine Learning / AI / Optimization
+# =====================================
+scikit-learn            # Classical ML algorithms
+imbalanced-learn        # Handle imbalanced datasets
+xgboost                 # Gradient boosting framework
+lightgbm                # Fast gradient boosting
+catboost                # Gradient boosting by Yandex
+mlxtend                 # Extensions for scikit-learn
+scikit-optimize         # Hyperparameter optimization
+optuna                  # Automated hyperparameter tuning
+joblib                  # Parallel computing tools
+pytorch-lightning       # High-level PyTorch training framework
+fastai                  # High-level deep learning library
+jax                     # High-performance ML library
+jaxlib                  # Backend for JAX
+
+# =====================================
+# 5. Deep Learning / Neural Networks
+# =====================================
+tensorflow              # Deep learning framework
+tensorflow-gpu          # TensorFlow GPU support
+keras                   # High-level neural networks API
+tflearn                 # Deep learning on TensorFlow
+torch                   # PyTorch deep learning framework
+torchvision             # Computer vision utilities for PyTorch
+torchaudio              # Audio utilities for PyTorch
+onnx                    # Open Neural Network Exchange format
+onnxruntime-gpu         # GPU-accelerated ONNX runtime
+tensorboard             # TensorFlow training visualization
+tensorboardX            # TensorBoard support for PyTorch
+
+# =====================================
+# 6. NLP & Text Processing
+# =====================================
+nltk                    # Natural language processing toolkit
+spacy                   # Industrial-strength NLP
+gensim                  # Topic modeling and word embeddings
+textblob                # Simplified text processing
+flair                   # NLP framework from Zalando
+sentence-transformers   # Sentence embeddings
+sumy                    # Text summarization
+simpletransformers      # Transformers with simple API
+snowballstemmer         # Stemming algorithms
+regex                   # Enhanced regular expressions
+textdistance            # Text similarity algorithms
+unidecode               # Remove accents from text
+text-unidecode          # Text transliteration
+
+# =====================================
+# 7. Computer Vision
+# =====================================
+pillow                  # Image processing library
+opencv-python           # Computer vision library
+scikit-image            # Image processing algorithms
+tifffile                # TIFF image file handling
+mediapipe               # Face, hand, pose tracking
+albumentations          # Image augmentation
+pycocotools             # COCO dataset utilities
+
+# =====================================
+# 8. NVIDIA GPU / CUDA Support (RTX 3050 Laptop)
+# =====================================
+nvidia-pip              # NVIDIA pip package index
+nvidia-pip-cu12         # CUDA 12 runtime
+nvidia-pip-cudnn        # cuDNN deep learning kernels
+nvidia-pip-tensorrt     # TensorRT inference optimizer
+nvidia-pip-cublas       # CUDA BLAS math library
+nvidia-pip-cufft        # CUDA FFT library
+nvidia-pip-curand       # CUDA RNG library
+nvidia-pip-cusolver     # CUDA solver library
+nvidia-pip-cusparse     # CUDA sparse matrix library
+nvidia-pip-nvrtc        # CUDA runtime compilation
+nvidia-pip-npp          # CUDA image processing library
+nvidia-pip-nvjpeg       # CUDA JPEG processing
+nvidia-pip-nvshmem      # GPU shared memory
+nvidia-pip-cuda-runtime # CUDA runtime
+nvidia-pip-cuda-compiler# CUDA compiler
+cupy                    # NumPy-like GPU arrays
+cudf                    # GPU dataframe (RAPIDS)
+cuml                    # GPU ML algorithms (RAPIDS)
+cugraph                 # GPU graph analytics (RAPIDS)
+
+# =====================================
+# 9. Jupyter Ecosystem
+# =====================================
+jupyter                 # Meta package for Jupyter
+jupyterlab              # Modern notebook interface
+jupyterlab_server       # JupyterLab backend
+jupyterlab_widgets      # Interactive widgets for JupyterLab
+jupyterlab-pygments     # Syntax highlighting
+jupyterlab-variableinspector # Variable inspector
+notebook                # Classic Jupyter notebook interface
+notebook-shim           # Compatibility layer for notebook extensions
+nbconvert               # Notebook export utilities
+nbclient                # Notebook execution client
+nbformat                # Notebook format support
+ipywidgets              # Interactive widgets
+ipykernel               # IPython kernel for Jupyter
+ipython                 # Interactive Python shell
+ipython_genutils        # Utilities for IPython
+widgetsnbextension      # Widgets frontend for notebooks
+
+# =====================================
+# 10. Web & API Tools
+# =====================================
+requests                # HTTP requests library
+requests-file           # File transport adapter for requests
+requests-toolbelt       # Additional tools for requests
+aiohttp                 # Async HTTP client/server
+aioitertools            # Async iterators utilities
+aiosignal               # Async event signaling
+aiohappyeyeballs        # Async DNS optimizations
+anyio                   # Async concurrency and networking
+beautifulsoup4          # HTML/XML parser
+lxml                    # Fast XML and HTML parser
+soupsieve               # CSS selectors for BeautifulSoup
+cssselect               # CSS selector support
+scrapy                  # Web scraping framework
+protego                 # robots.txt parser
+w3lib                   # Web utility functions
+parsel                  # HTML/XML data extraction
+tldextract              # Domain extraction from URLs
+flask                   # Lightweight WSGI web framework
+werkzeug                # WSGI utility library
+fastapi                 # Modern async web framework
+httpx                   # Async HTTP client
+httpcore                # HTTP transport backend
+
+# =====================================
+# 11. Voice / Speech Processing
+# =====================================
+speechrecognition       # Speech-to-text interface
+pyaudio                 # Audio input/output bindings
+pydub                   # Audio manipulation
+openai-whisper          # OpenAI Whisper speech recognition
+vosk                    # Offline speech recognition
+coqui-tts               # Text-to-speech
+gtts                    # Google Text-to-Speech
+transformers            # HuggingFace models including speech
+torchaudio              # Audio processing for PyTorch
+librosa                 # Audio analysis
+pyttsx3                 # Offline text-to-speech
+
+# =====================================
+# 12. Development & Linting Tools
+# =====================================
+black                   # Code formatter
+flake8                  # Code linting
+pylint                  # Static code analysis
+pylint-venv             # Virtualenv support for pylint
+autopep8                # Auto-format code to PEP8
+isort                   # Sort imports
+mypy                    # Static type checker
+mypy_extensions         # Extensions for mypy
+yapf                    # Code formatter by Google
+rope                    # Python refactoring library
+pycodestyle             # PEP8 style checker
+pyflakes                # Code checks
+docstring-to-markdown   # Convert docstrings to markdown
+pydocstyle              # Docstring style checker
+
+# =====================================
+# 13. Testing & Debugging
+# =====================================
+pytest                  # Testing framework
+pytest-cov              # Test coverage plugin for pytest
+debugpy                 # Debugger for Python
+coverage                # Code coverage measurement
+stack_data              # Stack trace utilities
+pdbpp                   # Enhanced Python debugger
+
+# =====================================
+# 14. Utilities
+# =====================================
+tqdm                    # Progress bars
+psutil                  # System and process utilities
+pathspec                # File path matching
+packaging               # Version parsing and packaging
+platformdirs            # OS-specific directories
+click                   # CLI creation toolkit
+cloudpickle             # Extended pickling support
+filelock                # File locking
+cachetools              # Caching utilities
+fsspec                  # Filesystem abstraction
+attrs                   # Class helpers and validation
+overrides               # Method overriding utilities
+typing-extensions       # Backports for typing features
+comm                    # Messaging utilities
+traitlets               # Configurable traits
+lazy_loader             # Lazy import helper
+more-itertools          # Additional iterator building blocks
+six                     # Python 2/3 compatibility
+setuptools              # Package development utilities
+wheel                   # Wheel packaging support
+
+# =====================================
+# 15. Distributed / Parallel Computing
+# =====================================
+dask                    # Parallel computing framework
+dask-core               # Core Dask library
+dask-expr               # Expression API for Dask
+distributed             # Dask distributed scheduler
+ray                     # Distributed execution framework
+pyspark                 # Apache Spark Python bindings
+modin                   # Parallel pandas dataframe
+
+# =====================================
+# 16. Security & Encryption
+# =====================================
+cryptography            # Cryptography recipes and primitives
+bcrypt                  # Password hashing
+pyopenssl               # SSL/TLS support
+service_identity        # SSL certificate validation
+pyjwt                   # JSON Web Tokens
+
+# =====================================
+# 17. Compression & Serialization
+# =====================================
+zipp                    # Zip file utilities
+brotli-python           # Brotli compression library
+msgpack-python          # MessagePack serialization
+msgpack                 # Alias for msgpack-python
+zstandard               # Zstandard compression
+
+# =====================================
+# 18. Documentation & Sphinx
+# =====================================
+sphinx                  # Documentation generator
+sphinxcontrib-applehelp # Apple help builder for Sphinx
+sphinxcontrib-devhelp   # Devhelp builder for Sphinx
+sphinxcontrib-htmlhelp  # HTML help builder
+sphinxcontrib-jsmath    # JavaScript math support
+sphinxcontrib-qthelp    # Qt help builder
+sphinxcontrib-serializinghtml # HTML serialization builder
+alabaster               # Sphinx theme
+docutils                # Document utilities
+
+# =====================================
+# 19. Misc
+# =====================================
+markdown                # Markdown parsing library
+markdown-it-py          # Markdown parser in Python
+mdurl                   # URL parsing for markdown
+mdit-py-plugins         # Markdown-it plugins
+markupsafe              # HTML/XML escaping utilities
+colorama                # Cross-platform colored terminal text
+pygments                # Syntax highlighting
+rich                    # Rich text and beautiful formatting
+watchdog                # File system event monitoring
+
+# =====================================
+# 20. Reinforcement Learning
+# =====================================
+gym                     # OpenAI Gym toolkit
+stable-baselines3       # Reinforcement learning algorithms
+
+# =====================================
+# 21. Advanced Deep Learning & ML Frameworks
+# =====================================
+transformers            # HuggingFace transformers for NLP & multimodal
+diffusers              # HuggingFace diffusion models
+fairseq                 # Facebook AI sequence modeling toolkit
+detectron2              # Facebook AI object detection & segmentation
+fasttext                # Facebook text classification and embeddings
+lightweight-ml-models   # Small footprint ML models
+tensorflow-addons       # Extra TensorFlow ops and models
+pytorch-ignite          # High-level PyTorch training helpers
+skorch                  # sklearn API for PyTorch models
+deepspeed               # Optimize deep learning training and inference
+transformers-interpreter # Model interpretability for transformers
+captum                  # PyTorch model interpretability
+
+# =====================================
+# 22. Data Engineering & Pipeline Tools
+# =====================================
+apache-airflow          # Workflow orchestration
+kedro                   # Data pipeline framework
+great_expectations     # Data validation and quality checks
+prefect                 # Workflow automation and orchestration
+dagster                 # Data orchestrator
+luigi                   # Workflow management system
+
+# =====================================
+# 23. Cloud SDKs & ML Services
+# =====================================
+boto3                   # AWS SDK for Python
+google-cloud-storage    # Google Cloud Storage client
+google-cloud-bigquery   # Google BigQuery client
+azure-ai-ml             # Azure Machine Learning SDK
+mlflow                  # ML lifecycle management and experiment tracking
+clearml                 # ML experiment management
+wandb                   # Weights & Biases experiment tracking
+neptune-client          # Experiment tracking tool
+ray[tune]               # Ray with hyperparameter tuning
+
+# =====================================
+# 24. Model Deployment & Serving
+# =====================================
+uvicorn                 # ASGI server for FastAPI
+gunicorn                # WSGI HTTP server
+tensorflow-serving-api  # TensorFlow model serving API client
+torchserve              # PyTorch model serving
+bentoml                 # ML model serving framework
+tritonclient[all]       # NVIDIA Triton inference client
+
+# =====================================
+# 25. Explainability & Interpretability
+# =====================================
+shap                    # SHAP values for explainability
+lime                    # Local interpretable model-agnostic explanations
+eli5                    # Debug and explain ML models
+alibi                   # ML model explanations and outlier detection
+
+# =====================================
+# 26. Probabilistic Programming & Bayesian Modeling
+# =====================================
+pymc3                   # Probabilistic programming framework
+pymc                    # Newer pymc version (v4+)
+cmdstanpy               # Python interface to Stan
+edward2                 # Probabilistic programming for TensorFlow
+pyro                    # Probabilistic programming on PyTorch
+
+# =====================================
+# 27. Graph ML & Network Analysis
+# =====================================
+torch-geometric         # Graph Neural Networks in PyTorch
+dgl                     # Deep Graph Library
+stellargraph            # Graph ML on TensorFlow and Keras
+
+# =====================================
+# 28. Time Series Analysis & Forecasting
+# =====================================
+prophet                 # Facebook Prophet forecasting tool
+tsfresh                 # Time series feature extraction
+statsforecast           # Fast forecasting library
+darts                   # Time series forecasting with deep learning
+
+# =====================================
+# 29. Data Augmentation & Synthetic Data
+# =====================================
+imgaug                  # Image augmentation library
+gretel-synthetics       # Synthetic data generation
+sdv                     # Synthetic Data Vault for tabular data
+
+# =====================================
+# 30. AutoML & Neural Architecture Search
+# =====================================
+auto-sklearn            # Automated ML toolkit
+tpot                    # Tree-based pipeline optimization tool
+nni                     # Neural Network Intelligence (Microsoft)
+keras-tuner             # Hyperparameter tuning for Keras
+
+# =====================================
+# 31. Specialized ML Libraries
+# =====================================
+opencv-python-headless  # OpenCV without GUI dependencies
+lightly                 # Data-centric ML and active learning
+
+# =====================================
+# 32. Backend Web Frameworks & Dev Tools (Added)
+# =====================================
+django                  # Full-featured web framework
+djangorestframework     # Django REST API toolkit
+channels                # Django WebSocket support
+flask                   # Micro web framework (already listed but kept for clarity)
+fastapi                 # Modern async web framework (already listed)
+sqlalchemy              # ORM for Python (already listed)
+alembic                 # Database migrations for SQLAlchemy
+gunicorn                # WSGI HTTP server (already listed)
+uvicorn                 # ASGI server (already listed)
+celery                  # Distributed task queue
+flower                  # Celery monitoring tool
+pytest-django           # Django plugin for pytest
+pytest-flask            # Flask plugin for pytest
+httpx                   # Async HTTP client (already listed)
+
+# =====================================
+# 33. Core Packaging and System Tools
+# =====================================
+pip                     # Python package installer
+setuptools              # Package development utilities
+wheel                   # Wheel packaging support
+six                     # Python 2/3 compatibility library
+readline                # GNU readline support for interactive input
+platformdirs            # OS-specific directory locations
+pkginfo                 # Package metadata handling
+
+# =====================================
+# 34. GUI Support and Tools
+# =====================================
+tk                      # Tkinter support for Python GUI applications
+pyqt5                   # Qt5 bindings for Python GUI development
+PyQt6                   # Qt6 bindings for Python GUI development
+pyqt5-sip               # SIP bindings required by PyQt5
+pyqtwebengine           # Qt WebEngine support for PyQt5
+qtpy                    # Abstraction layer for multiple Qt bindings (PyQt5, PyQt6, PySide2, etc.)
+qtawesome               # Icon pack for Qt applications
+qtconsole               # Qt-based console for Jupyter notebooks
+
+# Optional Additional GUI Frameworks (uncomment if needed)
+# wxpython              # wxWidgets Python GUI toolkit
+# kivy                  # Modern Python multi-touch UI framework
+
+
+# =====================================
+# End of requirements.txt
+# =====================================
 
