@@ -138,6 +138,7 @@ openbsd-netcat
 rocm-hip-sdk
 ollama-cuda
 cuda
+cuda-tools
 nvidia-container-toolkit
 nvidia-utils
 nvidia-settings
@@ -190,6 +191,7 @@ mongodb-compass-bin
 ttf-google-sans
 ttf-google
 devtoolbox
+xnviewmp
 proton-vpn-gtk-app
 portainer-bin
 preload
