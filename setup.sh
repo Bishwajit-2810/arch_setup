@@ -218,6 +218,7 @@ ibus-avro-git
 extension-manager
 ttf-google-sans
 ttf-google
+pencil
 )
 
 UNINSTALL_PACKAGES=(
