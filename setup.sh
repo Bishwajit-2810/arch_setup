@@ -10,7 +10,7 @@ NC="\033[0m"
 
 # Package lists
 PACMAN_PACKAGES=(
-#ptyxis
+ptyxis
 tree
 firefox-developer-edition
 rp-pppoe
@@ -94,7 +94,7 @@ libxv
 wavpack
 x264
 xvidcore
-chromium
+#chromium
 intellij-idea-community-edition
 pycharm-community-edition
 mpv
@@ -291,7 +291,7 @@ main_menu() {
   echo "5) Exit"
   echo "-------------------------------------"
 
-  read -rp "Choose an option [1-7]: " choice
+  read -rp "Choose an option [1-5]: " choice
 
   case "$choice" in
     1)
