@@ -12,6 +12,7 @@ NC="\033[0m"
 PACMAN_PACKAGES=(
 ptyxis
 tree
+epiphany
 firefox-developer-edition
 rp-pppoe
 base-devel
@@ -94,7 +95,6 @@ libxv
 wavpack
 x264
 xvidcore
-#chromium
 intellij-idea-community-edition
 pycharm-community-edition
 mpv
@@ -190,14 +190,13 @@ PARU_PACKAGES=(
 mongodb-compass-bin
 ttf-google-sans
 ttf-google
-devtoolbox
 xnviewmp
 proton-vpn-gtk-app
 portainer-bin
 preload
 parabolic
 planify 
-devtoolbox
+#devtoolbox # module Issue
 visual-studio-code-bin
 vscodium-bin
 google-chrome
@@ -222,13 +221,17 @@ pencil
 )
 
 UNINSTALL_PACKAGES=(
-gimp
-krita
-inkscape
 epiphany
+potrace
+gimp
+inkscape
+intellij-idea-community-edition
+iotas
+krita
 mpv
-lutris
+pycharm-community-edition
 heroic-games-launcher-bin
+lutris
 )
 
 # Logging helpers
