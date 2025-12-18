@@ -198,7 +198,8 @@ parabolic
 planify 
 #devtoolbox # module Issue
 visual-studio-code-bin
-vscodium-bin
+visual-studio-code-insiders-bin
+#vscodium-bin
 google-chrome
 postman-bin
 android-studio
@@ -235,10 +236,11 @@ lutris
 )
 
 # Logging helpers
-log()    { echo -e "${GREEN}[+] $*${NC}"; }
-warn()   { echo -e "${YELLOW}[!] $*${NC}"; }
-error()  { echo -e "${RED}[x] $*${NC}" >&2; }
+log()   { echo -e "${GREEN}[+] $*${NC}"; }
+warn()  { echo -e "${YELLOW}[!] $*${NC}"; }
+error() { echo -e "${RED}[x] $*${NC}" >&2; }
 
+# Sudo check
 check_sudo() {
   if ! sudo -v; then
     error "Sudo access is required."
@@ -246,7 +248,9 @@ check_sudo() {
   fi
 }
 
-install_paru() {
+# Install both AUR helpers (paru + yay)
+install_aur_helpers() {
+
   if ! command -v paru &>/dev/null; then
     warn "paru not found. Installing paru..."
     git clone https://aur.archlinux.org/paru.git /tmp/paru
@@ -254,41 +258,67 @@ install_paru() {
     makepkg -si --noconfirm
     popd >/dev/null
     rm -rf /tmp/paru
-    log "paru installed successfully."
+    log "paru installed."
+  fi
+
+  if ! command -v yay &>/dev/null; then
+    warn "yay not found. Installing yay..."
+    git clone https://aur.archlinux.org/yay.git /tmp/yay
+    pushd /tmp/yay >/dev/null
+    makepkg -si --noconfirm
+    popd >/dev/null
+    rm -rf /tmp/yay
+    log "yay installed."
   fi
 }
 
+# Unified AUR command with fallback
+aur() {
+  if command -v paru &>/dev/null; then
+    paru "$@"
+  elif command -v yay &>/dev/null; then
+    yay "$@"
+  else
+    error "No AUR helper available (paru/yay)."
+    exit 1
+  fi
+}
+
+# Package operations
 install_pacman_packages() {
   log "Installing official packages with pacman..."
   sudo pacman -Syu --needed --noconfirm "${PACMAN_PACKAGES[@]}"
 }
 
-install_paru_packages() {
-  log "Installing AUR packages with paru..."
-  paru -S --needed --noconfirm "${PARU_PACKAGES[@]}"
+install_aur_packages() {
+  log "Installing AUR packages (paru → yay fallback)..."
+  aur -S --needed --noconfirm "${PARU_PACKAGES[@]}"
 }
 
 uninstall_packages() {
-  log "Uninstalling selected packages with paru..."
-  paru -R --noconfirm "${UNINSTALL_PACKAGES[@]}"
+  log "Uninstalling selected packages (paru → yay fallback)..."
+  aur -R --noconfirm "${UNINSTALL_PACKAGES[@]}"
 }
 
+# Dry run
 show_dry_run() {
   echo -e "${YELLOW}Pacman packages to install:${NC}"
   printf '  - %s\n' "${PACMAN_PACKAGES[@]}"
+
   echo -e "\n${YELLOW}AUR packages to install:${NC}"
   printf '  - %s\n' "${PARU_PACKAGES[@]}"
+
   echo -e "\n${YELLOW}Packages to uninstall:${NC}"
   printf '  - %s\n' "${UNINSTALL_PACKAGES[@]}"
 }
 
-
+# Menu
 main_menu() {
   clear
   echo -e "${GREEN}Arch Linux Package Manager Menu${NC}"
   echo "-------------------------------------"
   echo "1) Install official (pacman) packages"
-  echo "2) Install AUR (paru) packages"
+  echo "2) Install AUR packages"
   echo "3) Uninstall packages"
   echo "4) Dry run (preview)"
   echo "5) Exit"
@@ -301,11 +331,11 @@ main_menu() {
       install_pacman_packages
       ;;
     2)
-      install_paru
-      install_paru_packages
+      install_aur_helpers
+      install_aur_packages
       ;;
     3)
-      install_paru
+      install_aur_helpers
       uninstall_packages
       ;;
     4)
@@ -316,16 +346,18 @@ main_menu() {
       exit 0
       ;;
     *)
-      error "Invalid option. Try again."
+      error "Invalid option."
       ;;
   esac
 
-  echo -e "\nPress Enter to return to the menu..."
-  read
+  echo
+  read -rp "Press Enter to return to the menu..."
   main_menu
 }
 
-# Run the script
+
+# Script entry point
 check_sudo
-install_paru
+install_aur_helpers
 main_menu
+
