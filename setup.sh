@@ -253,12 +253,11 @@ check_sudo() {
 }
 
 # --------------------------------------------------
-# AUR helper mode
+# AUR helper mode (selected once)
 # --------------------------------------------------
 AUR_HELPER_MODE=""
 
 select_aur_helper() {
-  clear
   echo -e "${GREEN}Select AUR helper${NC}"
   echo "-------------------------------------"
   echo "1) paru"
@@ -310,28 +309,21 @@ install_aur_helpers() {
 }
 
 # --------------------------------------------------
-# Unified AUR runner (respects mode)
+# Unified AUR runner
 # --------------------------------------------------
 aur() {
   case "$AUR_HELPER_MODE" in
-    paru)
-      paru "$@"
-      ;;
-    yay)
-      yay "$@"
-      ;;
+    paru) paru "$@" ;;
+    yay)  yay "$@" ;;
     both)
       if command -v paru &>/dev/null; then
         paru "$@"
-      elif command -v yay &>/dev/null; then
-        yay "$@"
       else
-        error "No AUR helper available."
-        exit 1
+        yay "$@"
       fi
       ;;
     *)
-      error "AUR helper not selected."
+      error "AUR helper not set."
       exit 1
       ;;
   esac
@@ -346,12 +338,12 @@ install_pacman_packages() {
 }
 
 install_aur_packages() {
-  log "Installing AUR packages using: ${AUR_HELPER_MODE}"
+  log "Installing AUR packages..."
   aur -S --needed --noconfirm "${AUR_PACKAGES[@]}"
 }
 
 uninstall_packages() {
-  log "Uninstalling packages using: ${AUR_HELPER_MODE}"
+  log "Uninstalling selected packages..."
   aur -R --noconfirm "${UNINSTALL_PACKAGES[@]}"
 }
 
@@ -370,12 +362,11 @@ show_dry_run() {
 }
 
 # --------------------------------------------------
-# Menu
+# Menu (no helper spam)
 # --------------------------------------------------
 main_menu() {
   clear
   echo -e "${GREEN}Arch Linux Package Manager Menu${NC}"
-  echo "AUR helper: ${AUR_HELPER_MODE}"
   echo "-------------------------------------"
   echo "1) Install official (pacman) packages"
   echo "2) Install AUR packages"
