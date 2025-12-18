@@ -186,7 +186,7 @@ ttf-roboto
 noto-fonts-extra
 )
 
-PARU_PACKAGES=(
+AUR_PACKAGES=(
 mongodb-compass-bin
 ttf-google-sans
 ttf-google
@@ -235,16 +235,11 @@ heroic-games-launcher-bin
 lutris
 )
 
-# --------------------------------------------------
 # Logging helpers
-# --------------------------------------------------
-log()   { echo -e "${GREEN}[+] $*${NC}"; }
-warn()  { echo -e "${YELLOW}[!] $*${NC}"; }
-error() { echo -e "${RED}[x] $*${NC}" >&2; }
+log()    { echo -e "${GREEN}[+] $*${NC}"; }
+warn()   { echo -e "${YELLOW}[!] $*${NC}"; }
+error()  { echo -e "${RED}[x] $*${NC}" >&2; }
 
-# --------------------------------------------------
-# Sudo check
-# --------------------------------------------------
 check_sudo() {
   if ! sudo -v; then
     error "Sudo access is required."
@@ -252,121 +247,49 @@ check_sudo() {
   fi
 }
 
-# --------------------------------------------------
-# Ask user which AUR helper to use (ONCE)
-# --------------------------------------------------
-AUR_HELPER_MODE=""
-
-choose_aur_helper() {
-  while true; do
-    echo
-    echo "Choose AUR helper to use:"
-    echo "  paru  → use paru only"
-    echo "  yay   → use yay only"
-    echo "  both  → try paru, fallback to yay"
-    echo
-    read -rp "Enter choice [paru/yay/both]: " AUR_HELPER_MODE
-
-    case "$AUR_HELPER_MODE" in
-      paru|yay|both)
-        break
-        ;;
-      *)
-        error "Invalid choice. Type paru, yay, or both."
-        ;;
-    esac
-  done
-}
-
-# --------------------------------------------------
-# Install only the selected AUR helper(s)
-# --------------------------------------------------
-install_aur_helpers() {
-
-  if [[ "$AUR_HELPER_MODE" == "paru" || "$AUR_HELPER_MODE" == "both" ]]; then
-    if ! command -v paru &>/dev/null; then
-      warn "Installing paru..."
-      git clone https://aur.archlinux.org/paru.git /tmp/paru
-      (cd /tmp/paru && makepkg -si --noconfirm)
-      rm -rf /tmp/paru
-    fi
-  fi
-
-  if [[ "$AUR_HELPER_MODE" == "yay" || "$AUR_HELPER_MODE" == "both" ]]; then
-    if ! command -v yay &>/dev/null; then
-      warn "Installing yay..."
-      git clone https://aur.archlinux.org/yay.git /tmp/yay
-      (cd /tmp/yay && makepkg -si --noconfirm)
-      rm -rf /tmp/yay
-    fi
+install_paru() {
+  if ! command -v paru &>/dev/null; then
+    warn "paru not found. Installing paru..."
+    git clone https://aur.archlinux.org/paru.git /tmp/paru
+    pushd /tmp/paru >/dev/null
+    makepkg -si --noconfirm
+    popd >/dev/null
+    rm -rf /tmp/paru
+    log "paru installed successfully."
   fi
 }
 
-# --------------------------------------------------
-# Unified AUR runner (respects user choice)
-# --------------------------------------------------
-aur() {
-  case "$AUR_HELPER_MODE" in
-    paru)
-      paru "$@"
-      ;;
-    yay)
-      yay "$@"
-      ;;
-    both)
-      if command -v paru &>/dev/null; then
-        paru "$@"
-      elif command -v yay &>/dev/null; then
-        yay "$@"
-      else
-        error "No AUR helper available."
-        exit 1
-      fi
-      ;;
-  esac
-}
-
-# --------------------------------------------------
-# Package operations
-# --------------------------------------------------
 install_pacman_packages() {
   log "Installing official packages with pacman..."
   sudo pacman -Syu --needed --noconfirm "${PACMAN_PACKAGES[@]}"
 }
 
 install_aur_packages() {
-  log "Installing AUR packages..."
-  aur -S --needed --noconfirm "${AUR_PACKAGES[@]}"
+  log "Installing AUR packages with paru..."
+  paru -S --needed --noconfirm "${AUR_PACKAGES[@]}"
 }
 
 uninstall_packages() {
-  log "Uninstalling selected packages..."
-  aur -R --noconfirm "${UNINSTALL_PACKAGES[@]}"
+  log "Uninstalling selected packages with paru..."
+  paru -R --noconfirm "${UNINSTALL_PACKAGES[@]}"
 }
 
-# --------------------------------------------------
-# Dry run
-# --------------------------------------------------
 show_dry_run() {
   echo -e "${YELLOW}Pacman packages to install:${NC}"
   printf '  - %s\n' "${PACMAN_PACKAGES[@]}"
-
   echo -e "\n${YELLOW}AUR packages to install:${NC}"
   printf '  - %s\n' "${AUR_PACKAGES[@]}"
-
   echo -e "\n${YELLOW}Packages to uninstall:${NC}"
   printf '  - %s\n' "${UNINSTALL_PACKAGES[@]}"
 }
 
-# --------------------------------------------------
-# Menu
-# --------------------------------------------------
+
 main_menu() {
   clear
   echo -e "${GREEN}Arch Linux Package Manager Menu${NC}"
   echo "-------------------------------------"
   echo "1) Install official (pacman) packages"
-  echo "2) Install AUR packages"
+  echo "2) Install AUR (paru) packages"
   echo "3) Uninstall packages"
   echo "4) Dry run (preview)"
   echo "5) Exit"
@@ -375,22 +298,35 @@ main_menu() {
   read -rp "Choose an option [1-5]: " choice
 
   case "$choice" in
-    1) install_pacman_packages ;;
-    2) install_aur_helpers; install_aur_packages ;;
-    3) install_aur_helpers; uninstall_packages ;;
-    4) show_dry_run ;;
-    5) exit 0 ;;
-    *) error "Invalid option." ;;
+    1)
+      install_pacman_packages
+      ;;
+    2)
+      install_paru
+      install_aur_packages
+      ;;
+    3)
+      install_paru
+      uninstall_packages
+      ;;
+    4)
+      show_dry_run
+      ;;
+    5)
+      echo "Goodbye!"
+      exit 0
+      ;;
+    *)
+      error "Invalid option. Try again."
+      ;;
   esac
 
-  read -rp "Press Enter to return to the menu..."
+  echo -e "\nPress Enter to return to the menu..."
+  read
   main_menu
 }
 
-# --------------------------------------------------
-# Script entry point
-# --------------------------------------------------
+# Run the script
 check_sudo
-choose_aur_helper
-install_aur_helpers
+install_paru
 main_menu
