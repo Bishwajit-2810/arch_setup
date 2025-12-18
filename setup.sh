@@ -253,33 +253,33 @@ check_sudo() {
 }
 
 # --------------------------------------------------
-# AUR helper mode (selected once)
+# Ask user which AUR helper to use (ONCE)
 # --------------------------------------------------
 AUR_HELPER_MODE=""
 
-select_aur_helper() {
-  echo -e "${GREEN}Select AUR helper${NC}"
-  echo "-------------------------------------"
-  echo "1) paru"
-  echo "2) yay"
-  echo "3) both (paru → yay fallback)"
-  echo "-------------------------------------"
+choose_aur_helper() {
+  while true; do
+    echo
+    echo "Choose AUR helper to use:"
+    echo "  paru  → use paru only"
+    echo "  yay   → use yay only"
+    echo "  both  → try paru, fallback to yay"
+    echo
+    read -rp "Enter choice [paru/yay/both]: " AUR_HELPER_MODE
 
-  read -rp "Choose [1-3]: " choice
-
-  case "$choice" in
-    1) AUR_HELPER_MODE="paru" ;;
-    2) AUR_HELPER_MODE="yay" ;;
-    3) AUR_HELPER_MODE="both" ;;
-    *)
-      error "Invalid choice."
-      select_aur_helper
-      ;;
-  esac
+    case "$AUR_HELPER_MODE" in
+      paru|yay|both)
+        break
+        ;;
+      *)
+        error "Invalid choice. Type paru, yay, or both."
+        ;;
+    esac
+  done
 }
 
 # --------------------------------------------------
-# Install selected AUR helpers
+# Install only the selected AUR helper(s)
 # --------------------------------------------------
 install_aur_helpers() {
 
@@ -287,11 +287,8 @@ install_aur_helpers() {
     if ! command -v paru &>/dev/null; then
       warn "Installing paru..."
       git clone https://aur.archlinux.org/paru.git /tmp/paru
-      pushd /tmp/paru >/dev/null
-      makepkg -si --noconfirm
-      popd >/dev/null
+      (cd /tmp/paru && makepkg -si --noconfirm)
       rm -rf /tmp/paru
-      log "paru installed."
     fi
   fi
 
@@ -299,32 +296,32 @@ install_aur_helpers() {
     if ! command -v yay &>/dev/null; then
       warn "Installing yay..."
       git clone https://aur.archlinux.org/yay.git /tmp/yay
-      pushd /tmp/yay >/dev/null
-      makepkg -si --noconfirm
-      popd >/dev/null
+      (cd /tmp/yay && makepkg -si --noconfirm)
       rm -rf /tmp/yay
-      log "yay installed."
     fi
   fi
 }
 
 # --------------------------------------------------
-# Unified AUR runner
+# Unified AUR runner (respects user choice)
 # --------------------------------------------------
 aur() {
   case "$AUR_HELPER_MODE" in
-    paru) paru "$@" ;;
-    yay)  yay "$@" ;;
+    paru)
+      paru "$@"
+      ;;
+    yay)
+      yay "$@"
+      ;;
     both)
       if command -v paru &>/dev/null; then
         paru "$@"
-      else
+      elif command -v yay &>/dev/null; then
         yay "$@"
+      else
+        error "No AUR helper available."
+        exit 1
       fi
-      ;;
-    *)
-      error "AUR helper not set."
-      exit 1
       ;;
   esac
 }
@@ -362,7 +359,7 @@ show_dry_run() {
 }
 
 # --------------------------------------------------
-# Menu (no helper spam)
+# Menu
 # --------------------------------------------------
 main_menu() {
   clear
@@ -394,7 +391,6 @@ main_menu() {
 # Script entry point
 # --------------------------------------------------
 check_sudo
-select_aur_helper
+choose_aur_helper
 install_aur_helpers
 main_menu
-
