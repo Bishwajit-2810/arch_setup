@@ -44,7 +44,7 @@ Follow these simple steps to get started:
     Navigate to your desired directory and clone this repository using Git.
 
     ```bash
-    git clone [https://github.com/Bishwajit-2810/arch_setup](https://github.com/Bishwajit-2810/arch_setup)
+    git clone https://github.com/Bishwajit-2810/arch_setup
     cd arch_setup
     ```
 
@@ -53,7 +53,7 @@ Follow these simple steps to get started:
     Give the script the necessary permissions to run.
 
     ```bash
-    chmod +x setup.sh
+    chmod u+x setup.sh
     ```
 
 3.  **3️⃣ Run the Script**
