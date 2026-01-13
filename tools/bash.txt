@@ -12,8 +12,8 @@ PS1='[\u@\h \W]\$ '
 
 #fastfetch
 eval "$(starship init bash)"
-export PATH="$PATH:/home/bk/.softwares/flutter/bin"
-export CHROME_EXECUTABLE=/usr/bin/chromium
+export PATH="$PATH:/home/bishwajit/.softwares/flutter/bin"
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 source /usr/share/nvm/init-nvm.sh
 
